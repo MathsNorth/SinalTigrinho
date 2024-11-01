@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identificador de Sinal</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Adicione o Firebase SDK aqui -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+    <script>
+        // Sua configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCytc18GoB4i3wKuYKYkB4zccn1lmbACPY",
+            authDomain: "loginsdotigger.firebaseapp.com",
+            projectId: "loginsdotigger",
+            storageBucket: "loginsdotigger.firebasestorage.app",
+            messagingSenderId: "1087221086114",
+            appId: "1:1087221086114:web:68df7202ac7d9d0faae4fb"
+        };
+        // Inicializar o Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+    </script>
 </head>
 <body>
     <div class="container">
@@ -19,6 +35,16 @@
             <button id="plataformaBtn" onclick="abrirPlataforma()">Plataforma</button>
             <p id="resultado"></p>
         </main>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginSenha" placeholder="Senha" required>
+            <button onclick="login()">Logar</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
